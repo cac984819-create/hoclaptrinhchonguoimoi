@@ -3,47 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lộ Trình Học HTML</title>
+    <title>Lộ Trình HTML Chi Tiết</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* --- CSS CHO THANH ĐIỀU HƯỚNG --- */
-        :root {
-            --html-orange: #FF8C00;
-            --css-blue: #2965f1;
-            --js-yellow: #f7df1e;
-        }
-
-        body { 
-            margin: 0; 
-            padding-top: 80px !important; 
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #FF8C00 0%, #FF5F6D 100%);
-            min-height: 100vh;
-        }
-
-        .main-navbar {
-            position: fixed; top: 0; left: 0; width: 100%; height: 70px;
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1); z-index: 9999;
-            display: flex; align-items: center;
-        }
-
-        .nav-container { width: 90%; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { text-decoration: none; font-size: 1.4rem; font-weight: 800; color: #333; }
-        .nav-menu { display: flex; gap: 15px; }
-        .nav-link { text-decoration: none; color: #555; font-weight: 600; padding: 10px 20px; border-radius: 12px; transition: 0.3s; }
+        :root { --html-color: #FF8C00; --bg-gradient: linear-gradient(135deg, #FF8C00 0%, #FF5F6D 100%); }
+        body { margin: 0; padding-top: 90px; font-family: 'Inter', sans-serif; background: #f4f7f6; min-height: 100vh; }
         
-        .html-link.active { background: var(--html-orange); color: white !important; }
-        .html-link:hover { color: var(--html-orange); background: rgba(255, 140, 0, 0.1); }
-        .css-link:hover { color: var(--css-blue); background: rgba(41, 101, 241, 0.1); }
+        .main-navbar { position: fixed; top: 0; width: 100%; height: 70px; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); display: flex; align-items: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-container { width: 90%; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { text-decoration: none; font-weight: 800; font-size: 1.4rem; color: #333; }
+        .nav-menu { display: flex; gap: 10px; }
+        .nav-link { text-decoration: none; color: #555; font-weight: 600; padding: 10px 18px; border-radius: 10px; transition: 0.3s; }
+        .html-link.active { background: var(--html-color); color: white; }
 
-        /* --- NỘI DUNG TRANG --- */
-        .container {
-            background: white; width: 90%; max-width: 900px; margin: 20px auto;
-            padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        h1 { color: var(--html-orange); text-align: center; }
-        .phase-card { border-left: 5px solid var(--html-orange); padding: 20px; margin-bottom: 20px; background: #fffcf9; border-radius: 0 10px 10px 0; }
+        .container { background: white; width: 90%; max-width: 1000px; margin: 0 auto 50px; padding: 40px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        header { text-align: center; border-bottom: 2px solid #eee; margin-bottom: 40px; padding-bottom: 20px; }
+        
+        .section-title { color: var(--html-color); border-left: 8px solid var(--html-color); padding-left: 15px; margin: 40px 0 20px; }
+        .content-box { display: flex; gap: 30px; align-items: flex-start; margin-bottom: 30px; flex-wrap: wrap; }
+        .text-content { flex: 1; min-width: 300px; }
+        .img-placeholder { width: 100%; max-width: 400px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        
+        ul li { margin-bottom: 10px; line-height: 1.6; color: #444; }
+        code { background: #fff5eb; color: #d35400; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -52,21 +34,52 @@
             <a href="index.html" class="nav-logo">🚀 WebDev Path</a>
             <div class="nav-menu">
                 <a href="index.html" class="nav-link html-link active">HTML</a>
-                <a href="css-path.html" class="nav-link css-link">CSS</a>
-                <a href="#" class="nav-link js-link" style="opacity:0.5">JS</a>
+                <a href="css-path.html" class="nav-link">CSS</a>
+                <a href="js-path.html" class="nav-link">JavaScript</a>
             </div>
         </div>
     </nav>
 
     <main class="container">
-        <h1>LỘ TRÌNH HỌC HTML</h1>
-        <div class="phase-card">
-            <h2>1. Nhập môn</h2>
-            <ul><li>Thẻ cơ bản: h1-h6, p, a, img</li><li>Cấu trúc Boilerplate</li></ul>
+        <header>
+            <h1>Lộ Trình Học HTML Siêu Chi Tiết</h1>
+            <p>Từ những viên gạch đầu tiên đến tối ưu hóa SEO chuyên nghiệp</p>
+        </header>
+
+        <h2 class="section-title">Phần 1: Nhập Môn & Cấu Trúc Gốc</h2>
+        <div class="content-box">
+            <div class="text-content">
+                <ul>
+                    <li><strong>Cấu trúc Boilerplate:</strong> Hiểu rõ <code>!DOCTYPE html</code>, <code>head</code> (chứa meta data) và <code>body</code> (chứa nội dung hiển thị).</li>
+                    <li><strong>Thẻ văn bản (Typography):</strong> Phân cấp tiêu đề từ <code>h1</code> đến <code>h6</code> và sử dụng <code>p</code> cho đoạn văn.</li>
+                    <li><strong>Multimedia cơ bản:</strong> Cách nhúng ảnh <code>img</code> với thuộc tính <code>alt</code> (SEO) và tạo liên kết <code>a</code>.</li>
+                </ul>
+            </div>
+            
         </div>
-        <div class="phase-card">
-            <h2>2. Thông dụng</h2>
-            <ul><li>Semantic HTML5</li><li>Form & Input</li></ul>
+
+        <h2 class="section-title">Phần 2: HTML5 Semantic & Biểu Mẫu</h2>
+        <div class="content-box">
+            
+            <div class="text-content">
+                <ul>
+                    <li><strong>Semantic Tags:</strong> Sử dụng <code>header</code>, <code>nav</code>, <code>article</code>, <code>section</code>, <code>footer</code> để giúp Google hiểu bố cục web.</li>
+                    <li><strong>Biểu mẫu (Forms):</strong> Xây dựng hệ thống nhập liệu với <code>input</code>, <code>select</code>, <code>textarea</code> và <code>label</code>.</li>
+                    <li><strong>Dữ liệu bảng:</strong> Cách tổ chức <code>table</code>, <code>thead</code>, <code>tbody</code> chuyên nghiệp.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="section-title">Phần 3: Nâng Cao & Tối Ưu</h2>
+        <div class="content-box">
+            <div class="text-content">
+                <ul>
+                    <li><strong>Kỹ thuật SEO Metadata:</strong> Cấu hình Open Graph để hiển thị đẹp trên Facebook/Zalo.</li>
+                    <li><strong>Đồ họa Web:</strong> Sự khác biệt giữa <code>SVG</code> (vector) và <code>Canvas</code> (pixel).</li>
+                    <li><strong>Web Accessibility:</strong> Sử dụng <code>ARIA roles</code> để hỗ trợ trình đọc màn hình cho người khiếm thị.</li>
+                </ul>
+            </div>
+            
         </div>
     </main>
 </body>
