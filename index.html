@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lộ Trình Học HTML Siêu Cấp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-orange: #FF8C00;
+            --dark-orange: #E67E22;
+            --light-orange: #FFDAB9;
+            --text-dark: #333;
+            --text-light: #555;
+            --bg-glass: rgba(255, 255, 255, 0.95);
+        }
+
+        body {
+            background: linear-gradient(135deg, #FF8C00 0%, #FF5F6D 100%);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0; /* Loại bỏ padding ở body */
+            display: flex;
+            flex-direction: column; /* Sắp xếp nội dung theo cột */
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .hero-banner {
+            width: 100%;
+            height: 300px; /* Chiều cao cố định cho banner */
+            background: url('https://picsum.photos/1200/300') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            margin-bottom: 40px; /* Khoảng cách với phần nội dung chính */
+            position: relative;
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.3); /* Lớp phủ làm mờ ảnh nền */
+        }
+
+        .hero-banner h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            z-index: 1; /* Đảm bảo text nằm trên lớp phủ */
+        }
+
+        .container {
+            background-color: var(--bg-glass);
+            backdrop-filter: blur(10px);
+            width: 90%;
+            max-width: 1000px;
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            margin-top: -100px; /* Kéo lên để chồng lên banner */
+            position: relative;
+            z-index: 2; /* Đảm bảo container nằm trên banner */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .video-section {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* Tỷ lệ 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .roadmap {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .phase-card {
+            background: #fff;
+            border: 1px solid #f0f0f0;
+            padding: 30px;
+            border-radius: 18px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Đẩy footer xuống cuối */
+        }
+
+        .phase-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-orange);
+            box-shadow: 0 12px 25px rgba(255, 140, 0, 0.15);
+        }
+
+        .phase-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--light-orange);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(255, 140, 0, 0.2);
+        }
+        
+        h2 { 
+            color: var(--dark-orange); 
+            font-size: 1.4rem;
+            margin-top: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        ul { 
+            padding-left: 20px; 
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.7;
+            list-style: none; /* Bỏ dấu chấm mặc định */
+        }
+
+        ul li::before { /* Tùy chỉnh dấu chấm */
+            content: "•";
+            color: var(--primary-orange);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            background: rgba(255, 140, 0, 0.1);
+            color: var(--dark-orange);
+            text-transform: uppercase;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+            width: 100%;
+            color: var(--text-light);
+        }
+
+        .action-button {
+            background: var(--primary-orange);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .action-button:hover {
+            background: var(--dark-orange);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-banner { height: 200px; }
+            .hero-banner h1 { font-size: 2.5rem; }
+            .container { padding: 30px; margin-top: -70px; }
+            .roadmap { grid-template-columns: 1fr; } /* Một cột trên màn hình nhỏ */
+            .phase-card { padding: 25px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-banner h1 { font-size: 1.8rem; }
+            .container { padding: 20px; }
+            header p { font-size: 0.9rem; }
+            h2 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-banner">
+        <h1>Bắt Đầu Hành Trình HTML</h1>
+    </div>
+
+    <main class="container">
+        <header>
+            <p>Chào mừng bạn đến với lộ trình học HTML toàn diện! Dù bạn là người mới bắt đầu hay muốn nâng cao kỹ năng, đây là hướng dẫn từng bước để bạn trở thành chuyên gia HTML.</p>
+        </header>
+
+        <section class="video-section">
+            <h3>Giới thiệu về Lộ trình học HTML</h3>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/MVEk_z7E7j4?si=C27R76K-95v1vN0V" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <p style="margin-top: 15px; font-style: italic; color: #777;">Xem video này để có cái nhìn tổng quan về những gì bạn sẽ học.</p>
+        </section>
+
+        <div class="roadmap">
+            <article class="phase-card">
+                <div class="phase-icon">📚</div>
+                <span class="badge">CẤP ĐỘ 01</span>
+                <h2>Nhập Môn HTML</h2>
+                <ul>
+                    <li><strong>Cấu trúc cơ bản:</strong> <code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>.</li>
+                    <li><strong>Văn bản:</strong> Tiêu đề (H1-H6), Đoạn văn (P), Định dạng cơ bản.</li>
+                    <li><strong>Liên kết:</strong> Thẻ <code>&lt;a&gt;</code> và các thuộc tính.</li>
+                    <li><strong>Hình ảnh:</strong> Thẻ <code>&lt;img&gt;</code> và cách tối ưu.</li>
+                </ul>
+            </article>
+
+            <article class="phase-card">
+                <div class="phase-icon">🛠️</div>
+                <span class="badge">CẤP ĐỘ 02</span>
+                <h2>HTML Thông Dụng</h2>
+                <ul>
+                    <li><strong>Semantic HTML5:</strong> <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+                    <li><strong>Bảng:</strong> Tạo và quản lý dữ liệu với <code>&lt;table&gt;</code>.</li>
+                    <li><strong>Biểu mẫu nâng cao:</strong> Các loại <code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>, Validation.</li>
+                    <li><strong>Thẻ Block & Inline:</strong> Hiểu về luồng tài liệu.</li>
+                </ul>
+            </article>
+
+            <article class="phase-card">
+                <div class="phase-icon">🌟</div>
+                <span class="badge">CẤP ĐỘ 03</span>
+                <h2>HTML Chuyên Sâu</h2>
+                <ul>
+                    <li><strong>Đa phương tiện:</strong> Nhúng Video <code>&lt;video&gt;</code> & Audio <code>&lt;audio&gt;</code>.</li>
+                    <li><strong>SEO & Metadata:</strong> Thẻ <code>&lt;meta&gt;</code>, Open Graph.</li>
+                    <li><strong>Đồ họa:</strong> Sử dụng SVG và Canvas cho hình ảnh động.</li>
+                    <li><strong>Accessibility:</strong> Thẻ ARIA và hỗ trợ người dùng khiếm khuyết.</li>
+                </ul>
+            </article>
+        </div>
+
+        <footer>
+            <p>Hành trình của bạn bắt đầu từ đây!</p>
+            <button class="action-button" onclick="alert('Chúc mừng, bạn đã sẵn sàng!')">Bắt đầu học ngay</button>
+        </footer>
+    </main>
+
+</body>
+</html>
