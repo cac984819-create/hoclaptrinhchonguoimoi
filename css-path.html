@@ -1,31 +1,76 @@
-<style>
-    :root { --css-color: #2965f1; }
-    .section-title { color: var(--css-color); border-left: 8px solid var(--css-color); }
-    code { background: #eef4ff; color: #2965f1; }
-</style>
-<main class="container">
-    <header><h1>Lộ Trình Học CSS Chuyên Sâu</h1></header>
-
-    <h2 class="section-title">Phần 1: CSS Box Model & Selectors</h2>
-    <div class="content-box">
-        <div class="text-content">
-            <ul>
-                <li><strong>Box Model:</strong> Hiểu rõ cách tính kích thước dựa trên <code>content</code>, <code>padding</code>, <code>border</code>, và <code>margin</code>.</li>
-                <li><strong>Selectors:</strong> Từ cơ bản (Class, ID) đến nâng cao (Pseudo-classes như <code>:hover</code>, <code>:nth-child</code>).</li>
-            </ul>
-        </div>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lộ Trình CSS Chi Tiết - WebDev Path</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --css-blue: #2965f1; --text-dark: #2d3436; }
+        body { margin: 0; padding-top: 80px; font-family: 'Inter', sans-serif; background: #f0f7ff; color: var(--text-dark); line-height: 1.6; }
         
-    </div>
+        /* Navbar (Giống trang 1) */
+        .navbar { position: fixed; top: 0; width: 100%; height: 70px; background: white; display: flex; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; }
+        .nav-container { width: 90%; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
+        .nav-logo { font-weight: 800; font-size: 1.5rem; text-decoration: none; color: var(--text-dark); }
+        .nav-links a { text-decoration: none; color: #666; font-weight: 600; margin-left: 20px; padding: 8px 15px; border-radius: 8px; transition: 0.3s; }
+        .nav-links a.active { background: var(--css-blue); color: white; }
 
-    <h2 class="section-title">Phần 2: Modern Layout (Flexbox & Grid)</h2>
-    <div class="content-box">
-        
-        <div class="text-content">
-            <ul>
-                <li><strong>Flexbox:</strong> Điều hướng bố cục 1 chiều (hàng hoặc cột).</li>
-                <li><strong>Grid:</strong> Xây dựng hệ thống lưới 2 chiều phức tạp cho toàn bộ trang web.</li>
-                <li><strong>Responsive Design:</strong> Sử dụng <code>@media</code> queries để web tự tương thích điện thoại.</li>
-            </ul>
+        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        h1 { color: var(--css-blue); text-align: center; }
+        h2 { border-left: 6px solid var(--css-blue); padding-left: 15px; }
+        .flex-box { display: flex; gap: 30px; align-items: flex-start; flex-wrap: wrap; margin: 30px 0; }
+        .text-part { flex: 1; min-width: 300px; }
+        .image-part { flex: 1; min-width: 300px; border-radius: 15px; overflow: hidden; border: 1px solid #eee; }
+        .badge { background: #d1e3ff; color: var(--css-blue); padding: 5px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🚀 WebDev Path</a>
+            <div class="nav-links">
+                <a href="index.html">HTML</a>
+                <a href="css-path.html" class="active">CSS</a>
+                <a href="js-path.html">JavaScript</a>
+            </div>
         </div>
-    </div>
-</main>
+    </nav>
+
+    <main class="container">
+        <h1>Lộ Trình CSS Chuyên Sâu</h1>
+
+        <section class="section">
+            <span class="badge">PHẦN 1</span>
+            <h2>Nền Tảng: Box Model & Selectors</h2>
+            <div class="flex-box">
+                <div class="image-part">
+                    
+                </div>
+                <div class="text-part">
+                    <h3>1.1 Box Model (Mô hình hộp)</h3>
+                    <p>Mọi phần tử trên web đều là một chiếc hộp. Bạn phải làm chủ: <code>Padding</code> (khoảng cách trong), <code>Border</code> (viền), và <code>Margin</code> (khoảng cách ngoài).</p>
+                    <h3>1.2 Selectors (Bộ chọn)</h3>
+                    <p>Cách bạn "nhắm" vào thẻ HTML để tô màu. Học từ cơ bản đến <code>Pseudo-classes</code> như <code>:hover</code> (khi rê chuột) hay <code>:nth-child</code>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <span class="badge">PHẦN 2</span>
+            <h2>Bố Cục: Flexbox & Grid</h2>
+            <div class="flex-box">
+                <div class="text-part">
+                    <h3>2.1 Flexbox</h3>
+                    <p>Dùng để sắp xếp các phần tử theo hàng hoặc cột một cách linh hoạt cực nhanh.</p>
+                    <h3>2.2 CSS Grid</h3>
+                    <p>Dùng để xây dựng những hệ thống lưới 2 chiều phức tạp (chia cột cho toàn trang web).</p>
+                </div>
+                <div class="image-part">
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
