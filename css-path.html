@@ -3,74 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lộ Trình CSS Chi Tiết - WebDev Path</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>CSS Mastery - Architecture & Performance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        :root { --css-blue: #2965f1; --text-dark: #2d3436; }
-        body { margin: 0; padding-top: 80px; font-family: 'Inter', sans-serif; background: #f0f7ff; color: var(--text-dark); line-height: 1.6; }
+        :root { 
+            --primary-blue: #2965f1; 
+            --secondary-blue: #00d4ff; 
+            --dark-blue: #1a2a6c;
+            --code-bg: #1e1e1e;
+            --text-gray: #4a4a4a;
+        }
+        body { margin: 0; padding-top: 70px; font-family: 'Inter', sans-serif; color: #333; line-height: 1.8; background: #f4f7f9; }
         
-        /* Navbar (Giống trang 1) */
-        .navbar { position: fixed; top: 0; width: 100%; height: 70px; background: white; display: flex; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; }
-        .nav-container { width: 90%; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
-        .nav-logo { font-weight: 800; font-size: 1.5rem; text-decoration: none; color: var(--text-dark); }
-        .nav-links a { text-decoration: none; color: #666; font-weight: 600; margin-left: 20px; padding: 8px 15px; border-radius: 8px; transition: 0.3s; }
-        .nav-links a.active { background: var(--css-blue); color: white; }
+        /* Navbar */
+        .navbar { position: fixed; top: 0; width: 100%; height: 70px; background: #fff; box-shadow: 0 2px 15px rgba(0,0,0,0.1); display: flex; align-items: center; z-index: 1000; }
+        .nav-container { width: 90%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-weight: 900; font-size: 1.8rem; text-decoration: none; color: var(--primary-blue); }
+        .nav-links a { text-decoration: none; color: #555; font-weight: 700; margin-left: 25px; transition: 0.3s; }
+        .nav-links a.active { color: var(--primary-blue); border-bottom: 2px solid var(--primary-blue); }
 
-        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        h1 { color: var(--css-blue); text-align: center; }
-        h2 { border-left: 6px solid var(--css-blue); padding-left: 15px; }
-        .flex-box { display: flex; gap: 30px; align-items: flex-start; flex-wrap: wrap; margin: 30px 0; }
-        .text-part { flex: 1; min-width: 300px; }
-        .image-part { flex: 1; min-width: 300px; border-radius: 15px; overflow: hidden; border: 1px solid #eee; }
-        .badge { background: #d1e3ff; color: var(--css-blue); padding: 5px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: bold; }
+        /* Hero */
+        .hero { background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue)); color: white; padding: 100px 20px; text-align: center; }
+        .hero h1 { font-size: 3.5rem; margin: 0; font-weight: 900; letter-spacing: -2px; }
+
+        /* Content Blocks */
+        .container { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+        .card { background: white; padding: 50px; border-radius: 30px; box-shadow: 0 15px 50px rgba(0,0,0,0.05); margin-bottom: 60px; }
+        
+        .grid-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        h2 { font-size: 2.2rem; color: var(--dark-blue); margin-bottom: 20px; }
+        h3 { color: var(--primary-blue); font-size: 1.3rem; margin-top: 25px; }
+
+        .code-snippet { background: var(--code-bg); color: #75beff; padding: 25px; border-radius: 15px; font-family: 'Fira Code', monospace; font-size: 0.9rem; margin: 25px 0; overflow-x: auto; border-left: 5px solid var(--secondary-blue); }
+        
+        .tip-box { background: #eef9ff; border-radius: 15px; padding: 25px; border-left: 5px solid var(--primary-blue); margin: 30px 0; }
+        .visual-box { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        
+        @media (max-width: 900px) { .grid-detail { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">🚀 WebDev Path</a>
+            <a href="index.html" class="nav-logo">CSS.ARCH</a>
             <div class="nav-links">
-                <a href="index.html">HTML</a>
-                <a href="css-path.html" class="active">CSS</a>
-                <a href="js-path.html">JavaScript</a>
+                <a href="index.html">HTML DEEP DIVE</a>
+                <a href="css-path.html" class="active">CSS ARCHITECTURE</a>
+                <a href="js-path.html">JS RUNTIME</a>
             </div>
         </div>
     </nav>
 
-    <main class="container">
-        <h1>Lộ Trình CSS Chuyên Sâu</h1>
+    <header class="hero">
+        <h1>Advanced CSS3 Pipeline</h1>
+        <p>Từ quy trình Render của trình duyệt đến các hệ thống bố cục phức tạp.</p>
+    </header>
 
-        <section class="section">
-            <span class="badge">PHẦN 1</span>
-            <h2>Nền Tảng: Box Model & Selectors</h2>
-            <div class="flex-box">
-                <div class="image-part">
-                    
+    <div class="container">
+        
+        <div class="card">
+            <div class="grid-detail">
+                <div>
+                    <h2>1. CSSOM & Quá trình Render</h2>
+                    <p>Trình duyệt không chỉ dùng HTML. Nó kết hợp <strong>DOM</strong> và <strong>CSSOM</strong> (CSS Object Model) để tạo ra <strong>Render Tree</strong>.</p>
+                    <ul>
+                        <li><strong>Recalculate Style:</strong> Tính toán xem selector nào khớp với phần tử nào.</li>
+                        <li><strong>Layout (Reflow):</strong> Tính toán kích thước và vị trí hình học của từng "hộp".</li>
+                        <li><strong>Paint:</strong> Điền màu, hình ảnh, biên giới vào các pixel.</li>
+                        <li><strong>Composite:</strong> Xếp chồng các lớp (layers) lên nhau để hiển thị.</li>
+                    </ul>
                 </div>
-                <div class="text-part">
-                    <h3>1.1 Box Model (Mô hình hộp)</h3>
-                    <p>Mọi phần tử trên web đều là một chiếc hộp. Bạn phải làm chủ: <code>Padding</code> (khoảng cách trong), <code>Border</code> (viền), và <code>Margin</code> (khoảng cách ngoài).</p>
-                    <h3>1.2 Selectors (Bộ chọn)</h3>
-                    <p>Cách bạn "nhắm" vào thẻ HTML để tô màu. Học từ cơ bản đến <code>Pseudo-classes</code> như <code>:hover</code> (khi rê chuột) hay <code>:nth-child</code>.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <span class="badge">PHẦN 2</span>
-            <h2>Bố Cục: Flexbox & Grid</h2>
-            <div class="flex-box">
-                <div class="text-part">
-                    <h3>2.1 Flexbox</h3>
-                    <p>Dùng để sắp xếp các phần tử theo hàng hoặc cột một cách linh hoạt cực nhanh.</p>
-                    <h3>2.2 CSS Grid</h3>
-                    <p>Dùng để xây dựng những hệ thống lưới 2 chiều phức tạp (chia cột cho toàn trang web).</p>
-                </div>
-                <div class="image-part">
+                <div class="visual-area">
                     
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+
+        <div class="card">
+            <div class="grid-detail" style="direction: rtl;">
+                <div style="direction: ltr;">
+                    <h2>2. Box Model & Stacking Context</h2>
+                    <p>Để trở thành chuyên gia, bạn phải hiểu cách các "hộp" tương tác trong không gian 3D của trình duyệt.</p>
+                    <h3>Box-sizing: border-box</h3>
+                    <p>Luôn sử dụng thuộc tính này để <code>width</code> bao gồm cả <code>padding</code> và <code>border</code>, giúp kiểm soát kích thước chính xác 100%.</p>
+                    <div class="tip-box">
+                        <strong>Kỹ thuật Stacking:</strong> <code>z-index</code> chỉ hoạt động khi bạn có <code>position</code> (relative, absolute, fixed). Nó tạo ra một "Stacking Context" mới.
+                    </div>
+                </div>
+                <div class="visual-area">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>3. Layout Mastery: Flexbox & Grid</h2>
+            <div class="grid-detail">
+                <div>
+                    <h3>CSS Grid (Hệ thống lưới 2 chiều)</h3>
+                    <p>Grid mạnh nhất khi xây dựng bố cục lớn. Khái niệm <code>fr</code> (fractional unit) giúp chia tỉ lệ màn hình cực kỳ linh hoạt.</p>
+                    <div class="code-snippet">
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+                    </div>
+                </div>
+                <div class="visual-area">
+                    
+                </div>
+            </div>
+            
+            <div class="grid-detail" style="margin-top: 40px;">
+                <div class="visual-area">
+                    
+                </div>
+                <div>
+                    <h3>Flexbox (Hệ thống 1 chiều)</h3>
+                    <p>Dùng cho các thành phần con trong một khối. Hãy nắm vững <code>flex-grow</code>, <code>flex-shrink</code> và <code>flex-basis</code> để xử lý co giãn giao diện mượt mà.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>4. Scalable CSS: Biến & Quy tắc BEM</h2>
+            <p>Trong các dự án lớn, việc quản lý mã CSS rất khó khăn. <strong>BEM (Block Element Modifier)</strong> là cứu cánh.</p>
+            <div class="code-snippet">
+/* Ví dụ về BEM */
+.card { }               /* Block */
+.card__title { }        /* Element */
+.card--featured { }     /* Modifier */
+
+/* Sử dụng CSS Variables */
+:root {
+  --brand-color: #2965f1;
+}
+.button { color: var(--brand-color); }
+            </div>
+        </div>
+
+    </div>
+
+    <footer style="text-align: center; padding: 60px; background: var(--dark-blue); color: white;">
+        <p style="font-weight: bold;">© 2026 CSS PERFORMANCE ACADEMY</p>
+        <p style="opacity: 0.6;">Tối ưu hóa từng pixel cho trải nghiệm người dùng hoàn hảo.</p>
+    </footer>
 </body>
 </html>
