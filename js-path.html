@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lộ Trình JavaScript Chi Tiết - WebDev Path</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --js-yellow: #f7df1e; --text-dark: #2d3436; }
+        body { margin: 0; padding-top: 80px; font-family: 'Inter', sans-serif; background: #fffdf0; color: var(--text-dark); line-height: 1.6; }
+        
+        /* Navbar (Giống trang 1) */
+        .navbar { position: fixed; top: 0; width: 100%; height: 70px; background: white; display: flex; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; }
+        .nav-container { width: 90%; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
+        .nav-logo { font-weight: 800; font-size: 1.5rem; text-decoration: none; color: var(--text-dark); }
+        .nav-links a { text-decoration: none; color: #666; font-weight: 600; margin-left: 20px; padding: 8px 15px; border-radius: 8px; transition: 0.3s; }
+        .nav-links a.active { background: var(--js-yellow); color: #333; }
+
+        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        h1 { color: #d6ba00; text-align: center; }
+        h2 { border-left: 6px solid var(--js-yellow); padding-left: 15px; }
+        .flex-box { display: flex; gap: 30px; align-items: flex-start; flex-wrap: wrap; margin: 30px 0; }
+        .text-part { flex: 1; min-width: 300px; }
+        .image-part { flex: 1; min-width: 300px; border-radius: 15px; overflow: hidden; border: 1px solid #eee; }
+        .badge { background: #fff9cb; color: #857200; padding: 5px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🚀 WebDev Path</a>
+            <div class="nav-links">
+                <a href="index.html">HTML</a>
+                <a href="css-path.html">CSS</a>
+                <a href="js-path.html" class="active">JavaScript</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Lộ Trình JavaScript Từ Cơ Bản</h1>
+
+        <section class="section">
+            <span class="badge">PHẦN 1</span>
+            <h2>Tư Duy: Biến & Logic</h2>
+            <div class="flex-box">
+                <div class="text-part">
+                    <h3>1.1 Biến & Kiểu dữ liệu</h3>
+                    <p>Học cách dùng <code>let</code>, <code>const</code> để lưu trữ thông tin và hiểu về Number, String, Boolean.</p>
+                    <h3>1.2 Hàm (Functions)</h3>
+                    <p>Viết các đoạn mã tái sử dụng giúp chương trình gọn gàng hơn.</p>
+                </div>
+                <div class="image-part">
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <span class="badge">PHẦN 2</span>
+            <h2>Thực Thi: DOM & Sự Kiện</h2>
+            <div class="flex-box">
+                <div class="image-part">
+                    
+                </div>
+                <div class="text-part">
+                    <h3>2.1 Điều khiển HTML (DOM)</h3>
+                    <p>Dùng JS để thay đổi nội dung trang web khi người dùng nhấn nút hoặc cuộn chuột.</p>
+                    <h3>2.2 Xử lý sự kiện</h3>
+                    <p>Làm chủ <code>addEventListener</code> để lắng nghe mọi hành động của người dùng.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
