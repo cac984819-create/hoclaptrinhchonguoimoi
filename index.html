@@ -3,103 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lộ Trình HTML Chi Tiết - WebDev Path</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>HTML5 Mastery - Siêu Chi Tiết</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        :root { --html-orange: #FF8C00; --text-dark: #2d3436; }
-        body { margin: 0; padding-top: 80px; font-family: 'Inter', sans-serif; background: #f9f9f9; color: var(--text-dark); line-height: 1.6; }
+        :root { --primary: #E44D26; --secondary: #F16529; --dark: #1a1a1a; --text: #333; --code-bg: #282c34; }
+        body { margin: 0; padding-top: 70px; font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.8; background: #fafafa; }
         
-        /* Navbar chung */
-        .navbar { position: fixed; top: 0; width: 100%; height: 70px; background: white; display: flex; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; }
-        .nav-container { width: 90%; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
-        .nav-logo { font-weight: 800; font-size: 1.5rem; text-decoration: none; color: var(--text-dark); }
-        .nav-links a { text-decoration: none; color: #666; font-weight: 600; margin-left: 20px; padding: 8px 15px; border-radius: 8px; transition: 0.3s; }
-        .nav-links a.active { background: var(--html-orange); color: white; }
+        /* Navbar chuyên nghiệp */
+        .navbar { position: fixed; top: 0; width: 100%; height: 70px; background: #fff; box-shadow: 0 2px 15px rgba(0,0,0,0.1); display: flex; align-items: center; z-index: 1000; }
+        .nav-container { width: 90%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-weight: 900; font-size: 1.8rem; text-decoration: none; color: var(--primary); letter-spacing: -1px; }
+        .nav-links a { text-decoration: none; color: #555; font-weight: 700; margin-left: 25px; transition: 0.3s; font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
 
-        /* Container & Layout */
-        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .section { margin-bottom: 60px; border-bottom: 1px dashed #ddd; padding-bottom: 40px; }
-        .section:last-child { border: none; }
-        
-        h1 { font-size: 2.5rem; text-align: center; color: var(--html-orange); }
-        h2 { font-size: 1.8rem; color: #333; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-        h3 { color: var(--html-orange); margin-top: 25px; }
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 100px 20px; text-align: center; }
+        .hero h1 { font-size: 3.5rem; margin: 0; font-weight: 900; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 20px auto; }
 
-        .flex-box { display: flex; gap: 30px; align-items: flex-start; flex-wrap: wrap; margin-top: 20px; }
-        .text-part { flex: 1; min-width: 300px; }
-        .image-part { flex: 1; min-width: 300px; border-radius: 15px; overflow: hidden; border: 1px solid #eee; }
+        /* Nội dung chi tiết */
+        .container { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+        .content-block { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); margin-bottom: 60px; }
         
-        code { background: #fff5eb; color: #e67e22; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
-        .badge { background: #ffeaa7; color: #d35400; padding: 5px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: bold; }
+        .expert-section { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; margin-bottom: 40px; }
+        .reverse { grid-template-columns: 0.8fr 1.2fr; }
+
+        h2 { font-size: 2rem; color: var(--dark); border-bottom: 4px solid var(--primary); display: inline-block; margin-bottom: 25px; }
+        h3 { color: var(--secondary); font-size: 1.4rem; margin-top: 30px; }
+        
+        .code-box { background: var(--code-bg); color: #abb2bf; padding: 25px; border-radius: 12px; font-family: 'Fira Code', monospace; position: relative; overflow-x: auto; margin: 20px 0; font-size: 0.9rem; }
+        .code-box::before { content: "HTML CODE"; position: absolute; top: 0; right: 20px; font-size: 0.7rem; color: #5c6370; font-weight: bold; }
+
+        .image-placeholder { width: 100%; border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); border: 1px solid #eee; }
+        
+        .feature-list { list-style: none; padding: 0; }
+        .feature-list li { margin-bottom: 15px; padding-left: 30px; position: relative; }
+        .feature-list li::before { content: "✔"; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+
+        .note-box { background: #fff5f5; border-left: 5px solid var(--primary); padding: 20px; border-radius: 8px; margin: 30px 0; }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">🚀 WebDev Path</a>
+            <a href="index.html" class="nav-logo">HTML.CORE</a>
             <div class="nav-links">
-                <a href="index.html" class="active">HTML</a>
-                <a href="css-path.html">CSS</a>
-                <a href="js-path.html">JavaScript</a>
+                <a href="index.html" class="active">HTML DEEP DIVE</a>
+                <a href="css-path.html">CSS ARCHITECTURE</a>
+                <a href="js-path.html">JS RUNTIME</a>
             </div>
         </div>
     </nav>
 
-    <main class="container">
-        <h1>Lộ Trình HTML Toàn Diện</h1>
+    <header class="hero">
+        <h1>HTML5: The Architect's Guide</h1>
+        <p>Khám phá tầng sâu của HTML không chỉ là các thẻ, mà là cách xây dựng một cấu trúc dữ liệu tối ưu cho toàn cầu.</p>
+    </header>
 
-        <section class="section">
-            <span class="badge">PHẦN 1</span>
-            <h2>Nhập Môn: Cấu Trúc & Thẻ Văn Bản</h2>
-            <div class="flex-box">
-                <div class="text-part">
-                    <p>Mọi trang web đều bắt đầu từ một file <code>.html</code>. Bạn cần hiểu cách trình duyệt đọc các thẻ (tags).</p>
-                    <h3>1.1 Boilerplate (Mã mẫu)</h3>
-                    <p>Là bộ khung bắt buộc bao gồm: <code>!DOCTYPE html</code> (báo hiệu chuẩn HTML5), <code>head</code> (chứa tiêu đề, icon, font) và <code>body</code> (nơi chứa mọi thứ người dùng thấy).</p>
-                    <h3>1.2 Thẻ nội dung cơ bản</h3>
-                    <ul>
-                        <li><code>h1</code> đến <code>h6</code>: Tiêu đề theo độ quan trọng.</li>
-                        <li><code>p</code>: Viết các đoạn văn bản.</li>
-                        <li><code>strong</code>, <code>em</code>: In đậm và in nghiêng mang ý nghĩa nhấn mạnh.</li>
+    <div class="container">
+        <div class="content-block">
+            <div class="expert-section">
+                <div>
+                    <h2>1. Phẫu thuật cấu trúc DOM Tree</h2>
+                    <p>Khi trình duyệt tải file HTML, nó chuyển mã thô thành <strong>Document Object Model (DOM)</strong>. Đây là một giao diện lập trình cho phép chúng ta thay đổi cấu trúc trang web bằng JS.</p>
+                    <ul class="feature-list">
+                        <li><strong>Parsing:</strong> Quá trình chuyển đổi từ Byte -> Characters -> Tokens -> Nodes -> DOM.</li>
+                        <li><strong>Hierarchy:</strong> Cấu trúc lồng nhau tạo ra mối quan hệ <code>Ancestor</code>, <code>Descendant</code>, <code>Sibling</code>.</li>
+                        <li><strong>Shadow DOM:</strong> Công nghệ giúp bao đóng mã nguồn cho các Web Components.</li>
                     </ul>
                 </div>
-                <div class="image-part">
+                <div class="image-area">
                     
                 </div>
             </div>
-        </section>
+            
+            <div class="note-box">
+                <strong>Góc chuyên gia:</strong> Việc tối ưu hóa độ sâu của DOM (DOM Depth) cực kỳ quan trọng. Một cây DOM quá sâu (>32 cấp) sẽ làm trình duyệt tốn nhiều tài nguyên hơn để tính toán layout.
+            </div>
+        </div>
 
-        <section class="section">
-            <span class="badge">PHẦN 2</span>
-            <h2>Thông Dụng: Semantic & Form</h2>
-            <div class="flex-box">
-                <div class="image-part">
+        <div class="content-block">
+            <div class="expert-section reverse">
+                <div class="image-area">
                     
                 </div>
-                <div class="text-part">
-                    <h3>2.1 Semantic HTML (HTML ngữ nghĩa)</h3>
-                    <p>Thay vì dùng <code>div</code> cho mọi thứ, hãy dùng thẻ có ý nghĩa như <code>header</code>, <code>nav</code>, <code>main</code>, <code>footer</code>. Điều này giúp Google SEO trang web bạn tốt hơn.</p>
-                    <h3>2.2 Biểu mẫu (Forms)</h3>
-                    <p>Dùng để thu thập dữ liệu người dùng: <code>input</code> (nhập liệu), <code>label</code> (nhãn tên), <code>button</code> (nút bấm), và <code>select</code> (danh sách chọn).</p>
+                <div>
+                    <h2>2. Chiến lược Semantic & SEO</h2>
+                    <p>Semantic HTML không chỉ để làm đẹp mã nguồn, nó là "hướng dẫn viên" cho <strong>Google Bot</strong> và các công cụ hỗ trợ người khuyết tật.</p>
+                    <h3>Các thẻ chiến lược nhất:</h3>
+                    <ul>
+                        <li><code>&lt;main&gt;</code>: Chỉ được xuất hiện 1 lần duy nhất, chứa nội dung quan trọng nhất của trang.</li>
+                        <li><code>&lt;section&gt;</code> vs <code>&lt;article&gt;</code>: Article dành cho nội dung độc lập có thể tách rời (như bài báo), Section dành cho các phần cùng chủ đề.</li>
+                        <li><code>&lt;aside&gt;</code>: Dành cho sidebar hoặc nội dung phụ liên quan gián tiếp.</li>
+                    </ul>
                 </div>
             </div>
-        </section>
 
-        <section class="section">
-            <span class="badge">PHẦN 3</span>
-            <h2>Nâng Cao: SEO & Accessibility</h2>
-            <div class="flex-box">
-                <div class="text-part">
-                    <h3>3.1 Thẻ Meta & Open Graph</h3>
-                    <p>Giúp trang web hiển thị chuyên nghiệp khi chia sẻ lên mạng xã hội với ảnh đại diện và mô tả hấp dẫn.</p>
-                    <h3>3.2 SVG & Media Tối Ưu</h3>
-                    <p>Sử dụng <code>svg</code> để ảnh không bị vỡ khi phóng to và <code>picture</code> để tải ảnh phù hợp theo kích thước màn hình.</p>
+            <div class="code-box">
+&lt;!-- Cấu trúc chuẩn công nghiệp --&gt;
+&lt;header&gt;
+    &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;header&gt;
+            &lt;h1&gt;Tiêu đề bài viết&lt;/h1&gt;
+            &lt;time datetime="2024-05-20"&gt;20 tháng 5&lt;/time&gt;
+        &lt;/header&gt;
+        &lt;p&gt;Nội dung chính...&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/main&gt;
+            </div>
+        </div>
+
+        <div class="content-block">
+            <div class="expert-section">
+                <div>
+                    <h2>3. Accessibility (Khả năng truy cập)</h2>
+                    <p>Viết HTML chuyên nghiệp nghĩa là trang web của bạn phải sử dụng được bởi <strong>tất cả mọi người</strong>, kể cả những người dùng trình đọc màn hình.</p>
+                    <ul class="feature-list">
+                        <li><strong>Alt Text:</strong> Không chỉ liệt kê <code>alt="image"</code>, hãy mô tả nội dung hình ảnh.</li>
+                        <li><strong>ARIA Roles:</strong> Sử dụng <code>role="button"</code> hoặc <code>aria-label</code> khi thẻ HTML mặc định không đủ rõ nghĩa.</li>
+                        <li><strong>Tab Index:</strong> Điều khiển thứ tự nhấn phím Tab để điều hướng web không cần dùng chuột.</li>
+                    </ul>
                 </div>
-                <div class="image-part">
+                <div class="image-area">
                     
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 60px; background: var(--dark); color: white; margin-top: 100px;">
+        <p style="font-weight: bold; font-size: 1.2rem;">© 2026 WEB ARCHITECT ACADEMY</p>
+        <p style="opacity: 0.6;">Xây dựng thế giới Internet bền vững bằng mã nguồn sạch.</p>
+    </footer>
 </body>
 </html>
