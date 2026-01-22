@@ -3,84 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lộ Trình HTML Chi Tiết</title>
+    <title>Lộ Trình HTML Chi Tiết - WebDev Path</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --html-color: #FF8C00; --bg-gradient: linear-gradient(135deg, #FF8C00 0%, #FF5F6D 100%); }
-        body { margin: 0; padding-top: 90px; font-family: 'Inter', sans-serif; background: #f4f7f6; min-height: 100vh; }
+        :root { --html-orange: #FF8C00; --text-dark: #2d3436; }
+        body { margin: 0; padding-top: 80px; font-family: 'Inter', sans-serif; background: #f9f9f9; color: var(--text-dark); line-height: 1.6; }
         
-        .main-navbar { position: fixed; top: 0; width: 100%; height: 70px; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); display: flex; align-items: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .nav-container { width: 90%; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { text-decoration: none; font-weight: 800; font-size: 1.4rem; color: #333; }
-        .nav-menu { display: flex; gap: 10px; }
-        .nav-link { text-decoration: none; color: #555; font-weight: 600; padding: 10px 18px; border-radius: 10px; transition: 0.3s; }
-        .html-link.active { background: var(--html-color); color: white; }
+        /* Navbar chung */
+        .navbar { position: fixed; top: 0; width: 100%; height: 70px; background: white; display: flex; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; }
+        .nav-container { width: 90%; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
+        .nav-logo { font-weight: 800; font-size: 1.5rem; text-decoration: none; color: var(--text-dark); }
+        .nav-links a { text-decoration: none; color: #666; font-weight: 600; margin-left: 20px; padding: 8px 15px; border-radius: 8px; transition: 0.3s; }
+        .nav-links a.active { background: var(--html-orange); color: white; }
 
-        .container { background: white; width: 90%; max-width: 1000px; margin: 0 auto 50px; padding: 40px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        header { text-align: center; border-bottom: 2px solid #eee; margin-bottom: 40px; padding-bottom: 20px; }
+        /* Container & Layout */
+        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 60px; border-bottom: 1px dashed #ddd; padding-bottom: 40px; }
+        .section:last-child { border: none; }
         
-        .section-title { color: var(--html-color); border-left: 8px solid var(--html-color); padding-left: 15px; margin: 40px 0 20px; }
-        .content-box { display: flex; gap: 30px; align-items: flex-start; margin-bottom: 30px; flex-wrap: wrap; }
-        .text-content { flex: 1; min-width: 300px; }
-        .img-placeholder { width: 100%; max-width: 400px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        h1 { font-size: 2.5rem; text-align: center; color: var(--html-orange); }
+        h2 { font-size: 1.8rem; color: #333; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        h3 { color: var(--html-orange); margin-top: 25px; }
+
+        .flex-box { display: flex; gap: 30px; align-items: flex-start; flex-wrap: wrap; margin-top: 20px; }
+        .text-part { flex: 1; min-width: 300px; }
+        .image-part { flex: 1; min-width: 300px; border-radius: 15px; overflow: hidden; border: 1px solid #eee; }
         
-        ul li { margin-bottom: 10px; line-height: 1.6; color: #444; }
-        code { background: #fff5eb; color: #d35400; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+        code { background: #fff5eb; color: #e67e22; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+        .badge { background: #ffeaa7; color: #d35400; padding: 5px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: bold; }
     </style>
 </head>
 <body>
-    <nav class="main-navbar">
+    <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">🚀 WebDev Path</a>
-            <div class="nav-menu">
-                <a href="index.html" class="nav-link html-link active">HTML</a>
-                <a href="css-path.html" class="nav-link">CSS</a>
-                <a href="js-path.html" class="nav-link">JavaScript</a>
+            <div class="nav-links">
+                <a href="index.html" class="active">HTML</a>
+                <a href="css-path.html">CSS</a>
+                <a href="js-path.html">JavaScript</a>
             </div>
         </div>
     </nav>
 
     <main class="container">
-        <header>
-            <h1>Lộ Trình Học HTML Siêu Chi Tiết</h1>
-            <p>Từ những viên gạch đầu tiên đến tối ưu hóa SEO chuyên nghiệp</p>
-        </header>
+        <h1>Lộ Trình HTML Toàn Diện</h1>
 
-        <h2 class="section-title">Phần 1: Nhập Môn & Cấu Trúc Gốc</h2>
-        <div class="content-box">
-            <div class="text-content">
-                <ul>
-                    <li><strong>Cấu trúc Boilerplate:</strong> Hiểu rõ <code>!DOCTYPE html</code>, <code>head</code> (chứa meta data) và <code>body</code> (chứa nội dung hiển thị).</li>
-                    <li><strong>Thẻ văn bản (Typography):</strong> Phân cấp tiêu đề từ <code>h1</code> đến <code>h6</code> và sử dụng <code>p</code> cho đoạn văn.</li>
-                    <li><strong>Multimedia cơ bản:</strong> Cách nhúng ảnh <code>img</code> với thuộc tính <code>alt</code> (SEO) và tạo liên kết <code>a</code>.</li>
-                </ul>
+        <section class="section">
+            <span class="badge">PHẦN 1</span>
+            <h2>Nhập Môn: Cấu Trúc & Thẻ Văn Bản</h2>
+            <div class="flex-box">
+                <div class="text-part">
+                    <p>Mọi trang web đều bắt đầu từ một file <code>.html</code>. Bạn cần hiểu cách trình duyệt đọc các thẻ (tags).</p>
+                    <h3>1.1 Boilerplate (Mã mẫu)</h3>
+                    <p>Là bộ khung bắt buộc bao gồm: <code>!DOCTYPE html</code> (báo hiệu chuẩn HTML5), <code>head</code> (chứa tiêu đề, icon, font) và <code>body</code> (nơi chứa mọi thứ người dùng thấy).</p>
+                    <h3>1.2 Thẻ nội dung cơ bản</h3>
+                    <ul>
+                        <li><code>h1</code> đến <code>h6</code>: Tiêu đề theo độ quan trọng.</li>
+                        <li><code>p</code>: Viết các đoạn văn bản.</li>
+                        <li><code>strong</code>, <code>em</code>: In đậm và in nghiêng mang ý nghĩa nhấn mạnh.</li>
+                    </ul>
+                </div>
+                <div class="image-part">
+                    
+                </div>
             </div>
-            
-        </div>
+        </section>
 
-        <h2 class="section-title">Phần 2: HTML5 Semantic & Biểu Mẫu</h2>
-        <div class="content-box">
-            
-            <div class="text-content">
-                <ul>
-                    <li><strong>Semantic Tags:</strong> Sử dụng <code>header</code>, <code>nav</code>, <code>article</code>, <code>section</code>, <code>footer</code> để giúp Google hiểu bố cục web.</li>
-                    <li><strong>Biểu mẫu (Forms):</strong> Xây dựng hệ thống nhập liệu với <code>input</code>, <code>select</code>, <code>textarea</code> và <code>label</code>.</li>
-                    <li><strong>Dữ liệu bảng:</strong> Cách tổ chức <code>table</code>, <code>thead</code>, <code>tbody</code> chuyên nghiệp.</li>
-                </ul>
+        <section class="section">
+            <span class="badge">PHẦN 2</span>
+            <h2>Thông Dụng: Semantic & Form</h2>
+            <div class="flex-box">
+                <div class="image-part">
+                    
+                </div>
+                <div class="text-part">
+                    <h3>2.1 Semantic HTML (HTML ngữ nghĩa)</h3>
+                    <p>Thay vì dùng <code>div</code> cho mọi thứ, hãy dùng thẻ có ý nghĩa như <code>header</code>, <code>nav</code>, <code>main</code>, <code>footer</code>. Điều này giúp Google SEO trang web bạn tốt hơn.</p>
+                    <h3>2.2 Biểu mẫu (Forms)</h3>
+                    <p>Dùng để thu thập dữ liệu người dùng: <code>input</code> (nhập liệu), <code>label</code> (nhãn tên), <code>button</code> (nút bấm), và <code>select</code> (danh sách chọn).</p>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <h2 class="section-title">Phần 3: Nâng Cao & Tối Ưu</h2>
-        <div class="content-box">
-            <div class="text-content">
-                <ul>
-                    <li><strong>Kỹ thuật SEO Metadata:</strong> Cấu hình Open Graph để hiển thị đẹp trên Facebook/Zalo.</li>
-                    <li><strong>Đồ họa Web:</strong> Sự khác biệt giữa <code>SVG</code> (vector) và <code>Canvas</code> (pixel).</li>
-                    <li><strong>Web Accessibility:</strong> Sử dụng <code>ARIA roles</code> để hỗ trợ trình đọc màn hình cho người khiếm thị.</li>
-                </ul>
+        <section class="section">
+            <span class="badge">PHẦN 3</span>
+            <h2>Nâng Cao: SEO & Accessibility</h2>
+            <div class="flex-box">
+                <div class="text-part">
+                    <h3>3.1 Thẻ Meta & Open Graph</h3>
+                    <p>Giúp trang web hiển thị chuyên nghiệp khi chia sẻ lên mạng xã hội với ảnh đại diện và mô tả hấp dẫn.</p>
+                    <h3>3.2 SVG & Media Tối Ưu</h3>
+                    <p>Sử dụng <code>svg</code> để ảnh không bị vỡ khi phóng to và <code>picture</code> để tải ảnh phù hợp theo kích thước màn hình.</p>
+                </div>
+                <div class="image-part">
+                    
+                </div>
             </div>
-            
-        </div>
+        </section>
     </main>
 </body>
 </html>
